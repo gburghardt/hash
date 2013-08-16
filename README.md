@@ -5,7 +5,7 @@ This simple implementation of Hash in JavaScript requires no dependencies and pr
 - Getting/setting values
 - Merging in values
 - Recursive merging of hashes within hashes
-- Iterating over the values with an implementatio of `Array#forEach`
+- Iterating over the values with an implementation of `Array#forEach`
 - Get an array of all keys
 
 ### Example Usage
@@ -15,7 +15,7 @@ This simple implementation of Hash in JavaScript requires no dependencies and pr
     var hash = new Hash();
     hash.set("title", "A hash!");
     hash.get("title"); // returns "A hash!"
-    hash.title; // equal "A hash!"
+    hash.title; // equals "A hash!"
 
     hash.set("merge"); // throws an error, "merge" is a reserved property
 
