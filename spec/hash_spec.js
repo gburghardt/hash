@@ -362,6 +362,20 @@ describe("Hash", function() {
 			}).toThrow("Cannot set reserved property: filter");
 		});
 
+		it("performs a shallow merge on array properties", function() {
+			this.hash.set("ages", [3, 29, 58]);
+			this.hash.merge({ ages: [5, 10] });
+
+			expect(this.hash.get("ages")).toEqual([3, 29, 58, 5, 10]);
+		});
+
+		it("adds duplicate values to arrays", function() {
+			this.hash.set("ages", [5, 10]);
+			this.hash.merge({ ages: [5, 10] });
+
+			expect(this.hash.get("ages")).toEqual([5, 10, 5, 10]);
+		});
+
 		it("returns a reference to the Hash", function() {
 			var returnValue = this.hash.merge({title: "Test"});
 
